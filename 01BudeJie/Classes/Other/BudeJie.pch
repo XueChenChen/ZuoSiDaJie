@@ -1,0 +1,53 @@
+//
+//  BudeJie.pch
+//  01BudeJie
+//
+//  Created by tarena on 16/8/31.
+//  Copyright © 2016年 陈薛晨. All rights reserved.
+//
+
+#ifndef BudeJie_pch
+#define BudeJie_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+//常量
+#import "CXCConst.h"
+
+//三方
+#import <MJExtension.h>
+#import <AFNetworking/AFNetworking.h>
+#import <UIKit+AFNetworking.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <YYKit.h>
+#import <MJRefresh.h>
+#define MAS_SHORTHAND_GLOBALS
+#import <Masonry.h>
+//分类
+#import "UIView+Frame.h"
+#import "UIBarButtonItem+item.h"
+#import "NSString+CXCURL.h"
+#import "NSObject+Parse.h"
+#import "UIScrollView+Refresh.h"
+#import "UIImage+Renderimage.h"
+//宏
+#define CXCFun NSLog(@"%s",__func__);
+#ifdef DEBUG //
+#define CXCLog(...) NSLog(__VA_ARGS__)
+#else       //
+#define CXCLog(...) 
+#endif
+
+
+#define CXCScreenW [UIScreen mainScreen].bounds.size.width
+#define CXCScreenH [UIScreen mainScreen].bounds.size.height
+
+#define iphone6p (CXCScreenH == 736)
+#define iphone6 (CXCScreenH == 667)
+#define iphone5 (CXCScreenH == 568)
+#define iphone4 (CXCScreenH == 480)
+
+#define CXCColor(r,g,b) [UIColor colorWithRed:(r) / 256.0 green:(g) / 256.0 blue:(b) / 256.0 alpha:1]
+#define CXCRandomColor CXCColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
+#define CXCAFNWriteToPlist(filename) [responseObject writeToFile:[NSString stringWithFormat:@"/Users/tarena/Desktop/CXC/myTest/%@.plist", @#filename] atomically:YES];
+#endif /* BudeJie_pch */
